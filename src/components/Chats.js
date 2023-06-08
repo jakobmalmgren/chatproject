@@ -6,6 +6,7 @@ import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import { SlLogout } from "react-icons/sl";
 import { BsChatDots } from "react-icons/bs";
+import styled from "styled-components";
 
 const Chats = () => {
   const history = useHistory();
@@ -14,6 +15,7 @@ const Chats = () => {
     history.push("/");
   };
   const { user } = useAuth();
+  console.log(user);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!user) {
@@ -61,25 +63,54 @@ const Chats = () => {
       });
   }, [user, history]);
 
-  if (!user || loading) return "...loading";
+  if (!user || loading) return "...Loading";
   return (
-    <div className="chats-page">
-      <div className="nav-bar">
-        <div className="logo-tab">
+    <Container>
+      <Navbar>
+        <Logo>
           <BsChatDots />
-        </div>
-        <div className="logout-tab" onClick={handleLogout}>
+        </Logo>
+        <LogoLogout onClick={handleLogout}>
           <SlLogout />
-        </div>
-      </div>
+        </LogoLogout>
+      </Navbar>
+
       <ChatEngine
         height="calc(100vh-66px)"
         userName={user.email}
         userSecret={user.uid}
         projectID={process.env.REACT_APP_CHAT_ID}
       ></ChatEngine>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+`;
+const Navbar = styled.div`
+  width: 100%;
+  height: 66px;
+  background-color: #002766;
+`;
+const Logo = styled.div`
+  position: absolute;
+  left: 22px;
+  top: 12px;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+`;
+const LogoLogout = styled.div`
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  color: white;
+  cursor: pointer;
+`;
 
 export default Chats;
