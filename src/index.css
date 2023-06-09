@@ -2,25 +2,11 @@
 * {
   font-family: "Grandiflora One", serif;
   font-weight: 700;
+  padding: 0px;
+  margin: 0px;
 }
 
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
-
-/* #loading-container {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background-color: rgb(255, 255, 255, 0.22);
-}
-
-#loading-icon {
-  font-size: 66px;
-  position: relative;
-  left: calc(50vw - 33px);
-  top: calc(50vh - 22px);
-} */

@@ -18,7 +18,7 @@ const Login = () => {
           with Google
         </LoginBtnGoogle>
         <br />
-        <br />
+
         <LoginBtnFacebook
           onClick={() =>
             auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
@@ -34,17 +34,13 @@ const Login = () => {
 
 const Container = styled.div`
   background-color: rgb(0, 39, 102);
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
 `;
 const LoginCard = styled.div`
-  position: relative;
-  font-family: "Grandiflora One", serif;
-  top: calc(50vh - 144px);
-  left: calc(50vw - 210px);
   padding-top: 36px;
   padding-bottom: 66px;
   width: 420px;
@@ -59,6 +55,13 @@ const LoginBtnGoogle = styled.div`
   display: inline-block;
   background-color: #4285f4;
   color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
 `;
 const LoginBtnFacebook = styled.div`
   cursor: pointer;
@@ -67,6 +70,11 @@ const LoginBtnFacebook = styled.div`
   border-radius: 8px;
   display: inline-block;
   background-color: #3b5998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
 `;
 
 export default Login;

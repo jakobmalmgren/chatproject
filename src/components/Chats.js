@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChatEngine } from "react-chat-engine";
 import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
@@ -9,17 +9,17 @@ import { BsChatDots } from "react-icons/bs";
 import styled from "styled-components";
 
 const Chats = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const handleLogout = async () => {
     await auth.signOut();
-    history.push("/");
+    history("/");
   };
   const { user } = useAuth();
   console.log(user);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!user) {
-      history.push("/");
+      history("/");
       return;
     }
     const getFile = async (url) => {
