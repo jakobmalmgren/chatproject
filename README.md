@@ -58,6 +58,11 @@ What was the inspiration behind creating the project?
 
 -React-icons
 
+# Heads up
+
+This is a try-out version, so if the webpage only loads or get an error in the console it is because the the API key exceeded. Let me know and if you want to see it I fix the issue immediately. Somehow it is not working on my phone
+and to get the best experience use a desktop, is my recomendation.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
