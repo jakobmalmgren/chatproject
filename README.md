@@ -62,6 +62,15 @@ What was the inspiration behind creating the project?
 
 This is a try-out version, so if the webpage only loads or get an error in the console it is because the the API key exceeded. Let me know and if you want to see it I fix the issue immediately. Somehow it is not working on my phone
 and to get the best experience use a desktop, is my recomendation.
+Down below is the link if u want to create an account and copy paste the
+KEY and ID by yourself, if u find an issue whit the fetching of the API.
+
+Description:
+
+https://chatengine.io
+
+-then head over to my project and create a new project to get a KEY and an ID.
+-Copy paste the KEY and the ID in the ENV file in here.
 
 # Getting Started with Create React App
 
